@@ -7,14 +7,12 @@ vercel secrets add api-url https://app.web4app.com
 
 # Clone the repository
 git clone https://github.com/Abblix/Oidc.Server.git
-
 # Navigate to the project directory
 cd Oidc.Server
 
 # Check if .NET SDK is installed
 dotnet --version  # Check the installed version of .NET SDK
 # Visit the official Microsoft website to install or update it if necessary
-
 # Restore dependencies
 dotnet restore
 
@@ -28,7 +26,8 @@ vercel secrets add db-url postgres://user:password@host:5432/db
 # Preview env with staging URLs
 vercel secrets add api-url-staging https://staging-api.myapp.com
 vercel secrets add db-url-staging postgres://staging_user:pw@staging_host:5432/staging_db
-@dependabot:  git rebase --continue
+
+@dependabot git rebase --continue
  npm install
  npm run dev
 
@@ -43,7 +42,7 @@ npm run build
 git checkout gh-pages
 cp -r dist/* .
 git commit -am "Deploy"
-git push origin gh-pages
+git push -u origin gh-pages
 
 git add --all
 git commit -m "Initial commit"
@@ -55,7 +54,7 @@ npm publish
 
 cd server
 npm init -y
-npm i express cors google-generative-ai firebase-admin multer pdf-parse
+npm i express cors google-generative-ai firebase-admin multer pdf-parse lmlm pudteeth asha rodaai
 npm i -D typescript ts-node @types/node @types/express @types/cors @types/multer
 npx tsc --init
 
@@ -67,8 +66,16 @@ cd server
 export GOOGLE_API_KEY=YOUR_KEY
 # For Firebase Admin:
 # export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json
-npx ts-node src/index.ts
+
+$ npx ts-node src/index.ts
 
 npm run dev
-# open http://localhost:5173/chat (after logging in)
+# open http://localhost:8080/chat (after logging in)
+
+copilot -p "Show me this week's commits and summarize them" --allow-tool 'shell(git)'
+# ./script-outputting-options.sh | copilot
+# Change the background-color of H1 headings to dark blue
+
+
 ```
+
