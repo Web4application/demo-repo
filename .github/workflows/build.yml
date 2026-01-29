@@ -21,16 +21,16 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
       - run: bundle exec jekyll build
-      - uses: web4application/proof-html@v2
+      - uses: anishathalye/proof-html@v2
         with:
           directory: ./_site
           enforce_https: false
           tokens: |
-            {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"} or {"https://gh.io": "${{ secrets.GITHUB_TOKEN }}"} or
+            {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}
           ignore_url: |
             http://www.example.com/
             https://en.wikipedia.org/wiki/Main_Page
           ignore_url_re: |
             ^https://twitter.com/
           swap_urls: |
-            {"^https://www.anishathalye.com/": "/"}
+             {"^https:\\/\\/example\\.com\\/": "/"}
