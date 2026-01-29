@@ -73,9 +73,10 @@ npm run dev
 # open http://localhost:8080/chat (after logging in)
 
 copilot -p "Show me this week's commits and summarize them" --allow-tool 'shell(git)'
-# ./script-outputting-options.sh | copilot
+ ./script-outputting-options.sh | copilot
 # Change the background-color of H1 headings to dark blue
-
-
-```
+docker run --rm \
+    -e INPUT_DIRECTORY=build \
+    -v "${PWD}/build:/build" \
+    proof-html:latest
 
