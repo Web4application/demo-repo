@@ -3,7 +3,7 @@ name: 'kubu-hai'
 on:
   push:
     branches:
-      - '"main"'
+      - "main"
 
 env:
   PROJECT_ID: 'kubu-hai' # TODO: update to your Google Cloud project ID
@@ -51,7 +51,7 @@ jobs:
       - name: 'Set up GKE credentials'
         uses: 'google-github-actions/get-gke-credentials@8e574c49425fa7efed1e74650a449bfa6a23308a' # google-github-actions/get-gke-credentials@v2
         with:
-          cluster_name: '${{ env.kubu-hai }}'
+          cluster_name: '${{ env.web4-application }}'
           location: '${{ env.GKE_ZONE }}'
 
       # Build the Docker image
